@@ -1,0 +1,69 @@
+.rh-gal {
+    max-width: 100%;
+    max-height: 100%;
+    overflow-x: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+
+.rh-gal .item {
+    display: inline-block;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.rh-gal .rh-controls {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rh-gal .rh-controls .control {
+    position: absolute;
+}
+
+.rh-gal .rh-controls .left {
+    left: 20px;
+}
+
+.rh-gal .rh-controls .right {
+    right: 20px;
+}
+
+.rh-gal.blured .item {
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+}
+
+.rh-gal.parallax .item{
+    background-attachment: fixed !important;
+}
+
+
+.rh-children {
+    z-index: 15;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 50px;
+    color: white !important;
+}
+
+.rh-gal .rh-controls .left:hover,
+.rh-gal .rh-controls .right:hover {
+    cursor: pointer;
+}
