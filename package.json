@@ -1,6 +1,6 @@
 {
   "name": "@herii/react-gallery",
-  "version": "1.0.0",
+  "version": "1.0.9",
   "description": "A simple react component to add a gallery to your project.",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -32,7 +32,6 @@
     "@babel/core": "^7.18.5",
     "@babel/preset-env": "^7.18.2",
     "@babel/preset-react": "^7.17.12",
-    "@rollup/plugin-commonjs": "^22.0.0",
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@storybook/addon-actions": "^6.5.9",
     "@storybook/addon-essentials": "^6.5.9",
