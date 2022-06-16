@@ -20,7 +20,6 @@ export const Gallery = ({items}) => {
             }
         }
         preload(items)
-        console.log('Preloading...', items)
     }, [items])
 
     const move = (by) => {
