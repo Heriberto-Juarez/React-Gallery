@@ -52,7 +52,7 @@ export const Gallery = ({items}) => {
     }
 
     return (<>
-        <div className={classNames('rh-gal', { "blured": items[it].blur, "parallax": items[it].parralax })}>
+        <div className={classNames('rh-gal', { "blured": items[it].blur, "parallax": items[it].parallax })}>
             <div className='item' style={{ background: `url(${items[it].img})`, width: '100vw', height: '100vh' }} />
             <div className="rh-children">
                 {items[it].children && items[it].children}

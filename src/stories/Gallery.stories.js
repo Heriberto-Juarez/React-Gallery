@@ -23,7 +23,7 @@ stories.add('Gallery Component', ()=>{
             }, 
             {
                 img: "https://cdn.pixabay.com/photo/2016/11/23/18/27/hummingbird-1854225_1280.jpg",
-                parralax: true,
+                parallax: true,
             }]
         }/>
         <div>
