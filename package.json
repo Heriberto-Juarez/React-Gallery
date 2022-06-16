@@ -1,6 +1,6 @@
 {
   "name": "@herii/react-gallery",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "A simple react component to add a gallery to your project.",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
