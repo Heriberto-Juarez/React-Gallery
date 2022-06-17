@@ -74,3 +74,5 @@ Set to true to blur the image
 ### parallax (boolean)
 Set to true to enable parallax effect when scrolling.
 
+### children (JSX)
+You can add JSX here, you can add a div, style it and position the content wherever you want (Just like in the example image above where text size was increased, and centered)
