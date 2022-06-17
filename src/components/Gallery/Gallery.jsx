@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 import anime from 'animejs/lib/anime.es.js';
 import classNames from 'classnames'
@@ -10,6 +10,7 @@ import './index.css'
 
 export const Gallery = ({items, width, height}) => {
     const [it, setIt] = useState(0) // Selected Item (Default 0)
+    const imageRef = useRef(null)
 
     useEffect(() => {
         const images = []
@@ -25,29 +26,36 @@ export const Gallery = ({items, width, height}) => {
     const move = (by) => {
         const np = parseInt(it) + parseInt(by) // new item position
         if (typeof items[np] !== 'undefined') {
-
             let translateInitial = '100vw'
-            let translateFinal = '0'
             if (by < 0) {
                 translateInitial = '-100vw'
             }
-            anime({
-                targets: '.rh-gal .item',
-                translateX: translateInitial,
-                easing: 'easeInOutSine',
-                duration: 300,
-                width: 0,
-            })
-            setTimeout(() => {
-                setIt(np)
-                anime({
-                    targets: '.rh-gal .item',
-                    translateX: translateFinal,
-                    duration: 300,
+            if (imageRef.current){
+                const el = imageRef.current
+                const anim1 = anime({
+                    targets: el,
+                    transform: `translateX(${translateInitial})`,
                     easing: 'easeInOutSine',
-                    width: '100%',
+                    duration: 200,
+                    width: 0,
+                    opacity: 0.4,
                 })
-            }, 200)
+                anim1.finished.then(()=>{
+                    setIt(np)
+                    const anim2 = anime({
+                        targets: el,
+                        transform: 'translateX(0)',
+                        duration: 400,
+                        easing: 'easeInOutSine',
+                        width: '100%',
+                        backgroundPosition: 'center',
+                        opacity: 1,
+                    })
+                    anim2.finished.then(()=>{
+                        el.style.removeProperty('transform') // If transform has a value then background-attachment: fixed won't work, therefore we have to remove this value.
+                    })
+                })
+            }
         }
     }
 
@@ -55,10 +63,10 @@ export const Gallery = ({items, width, height}) => {
         <div className={classNames('rh-gal', { "blured": items[it].blur || false, "parallax": items[it].parallax || false })} style={{
              width: width, 
              height: height
-        }}>
-            <div className='item' 
+        }} ref={imageRef}>
+            <div className='item'
                 style={{
-                     background: `url(${items[it].img})`, 
+                    backgroundImage: `url(${items[it].img})`, 
                     width: '100%',
                     height: '100%',
                 }}
@@ -87,5 +95,5 @@ Gallery.defaultProps = {
 Gallery.propTypes = {
     items: PropTypes.arrayOf(Object).isRequired,
     width: PropTypes.string,
-    height: PropTypes.stir
+    height: PropTypes.string
 }

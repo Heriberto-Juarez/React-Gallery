@@ -9,10 +9,11 @@
 
 
 .rh-gal .item {
-    display: inline-block;
+    display: flex;
     background-position: center !important;
     background-repeat: no-repeat !important;
     background-size: cover !important;
+    position: relative;
 }
 
 .rh-gal .rh-controls {
