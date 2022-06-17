@@ -6,7 +6,13 @@
 
 This is a very simple but powerful react component that allows you to add a gallery with different cool features.
 
-## Features
+## 💫 DEMO 🚀 💫
+
+You can see a demo here on [codesandbox.io](https://codesandbox.io/s/little-sound-7h4db2?file=/src/App.js)
+
+
+
+## 🚀 Features
 
 - Add blur to a specific image of the gallery
 - Add a parallax effect
@@ -14,7 +20,7 @@ This is a very simple but powerful react component that allows you to add a gall
 - You get two arrows to control the selected image.
 - The images are preloaded for a fast and smooth transition between each image in the gallery
 
-## Installation
+## 💽 Installation 
 
 You can use npm or yarn to add our package to your project.
 
@@ -25,7 +31,7 @@ You can use npm or yarn to add our package to your project.
 And of course Dillinger itself is open source with a [public repository][dill]
  on GitHub.
 
-## How to use
+## 💻 How to use
 
 Import Gallery from our
 
@@ -99,3 +105,13 @@ Each Object can have the following properties:
         parallax: true,
         children: <>Hello</>
     }
+
+
+# Support
+I created this project it to use it in my own projects as a reusable component and I support it and update it as much as I require to.
+
+If you find any issue/glitch/bug you can create an issue by clicking [here](https://github.com/Heriberto-Juarez/React-Gallery/issues/new) and I'll review it and fix it as soon as possible.
+
+
+
+If you want to support further development of this package / new features / etc, You can do it by [donating](https://www.paypal.com/donate/?hosted_button_id=N9ZNDBHCSLHWC) me whathever amount you desire. 
