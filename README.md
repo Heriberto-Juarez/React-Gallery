@@ -12,6 +12,7 @@ This is a very simple but powerful react component that allows you to add a gall
 - Add a parallax effect
 - Add Content to the gallery (On top of an image of your gallery)
 - You get two arrows to control the selected image.
+- The images are preloaded for a fast and smooth transition between each image in the gallery
 
 ## Installation
 
@@ -48,7 +49,27 @@ Now you are ready to use our component inside your app:
                 }]
             }/>
 
-## Parameters
+## Properties
+
+The Component's properties are listed below.
+
+### width
+
+The width of the container of the images (The images use 100% of the width of the container)
+
+|type | default|
+|---|---|
+|string|'100vw'|
+
+### height
+
+The height of the container of the images (The images use 100% of the height of the container)
+
+|type | default|
+|---|---|
+|string|'100vh'|
+
+### Items
 
 The only parameter you can pass right now is the `items` which is an array  of objects
 
@@ -62,8 +83,6 @@ The only parameter you can pass right now is the `items` which is an array  of o
     ]
 
 Each Object can have the following properties:
-
-You can add JSX here, you can add a div, style it and position the content wherever you want (Just like in the example image above where text size was increased, and centered)
 
 |  Property | Type(s)  | Example  | Default | Description |
 |---|---|---|---|---|

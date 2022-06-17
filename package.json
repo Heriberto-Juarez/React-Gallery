@@ -1,6 +1,6 @@
 {
   "name": "@herii/react-gallery",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "A simple react component to add a gallery to your project.",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -17,10 +17,8 @@
   "keywords": [
     "react",
     "gallery",
-    "react",
-    "gallery",
     "component",
-    "js"
+    "react-gallery"
   ],
   "author": "Heriberto-Juarez",
   "license": "MIT",

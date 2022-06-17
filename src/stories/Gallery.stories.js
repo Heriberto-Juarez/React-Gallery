@@ -11,7 +11,7 @@ stories.add('Gallery Component', ()=>{
             <p>
                 Gallery Component:
             </p>
-            <Gallery items={[{
+            <Gallery width="100vw" height="100vh" items={[{
                 img: "https://cdn.pixabay.com/photo/2022/05/31/17/14/bird-7233900_1280.jpg",
                 blur: true,
                 children: <div className='flex-center'>
@@ -19,7 +19,8 @@ stories.add('Gallery Component', ()=>{
                     <h1>Birds are cool</h1>
                     <p style={{color: 'white'}}>So as this gallery component is</p>
                     </div>
-                </div>
+                </div>,
+                parallax: true,
             }, 
             {
                 img: "https://cdn.pixabay.com/photo/2016/11/23/18/27/hummingbird-1854225_1280.jpg",

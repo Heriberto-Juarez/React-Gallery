@@ -8,7 +8,7 @@ import ra from './right-arrow.png'
 import PropTypes from 'prop-types'
 import './index.css'
 
-export const Gallery = ({items}) => {
+export const Gallery = ({items, width, height}) => {
     const [it, setIt] = useState(0) // Selected Item (Default 0)
 
     useEffect(() => {
@@ -35,7 +35,7 @@ export const Gallery = ({items}) => {
                 targets: '.rh-gal .item',
                 translateX: translateInitial,
                 easing: 'easeInOutSine',
-                duration: 500,
+                duration: 300,
                 width: 0,
             })
             setTimeout(() => {
@@ -43,17 +43,26 @@ export const Gallery = ({items}) => {
                 anime({
                     targets: '.rh-gal .item',
                     translateX: translateFinal,
-                    duration: 500,
+                    duration: 300,
                     easing: 'easeInOutSine',
                     width: '100%',
                 })
-            }, 400)
+            }, 200)
         }
     }
 
     return (<>
-        <div className={classNames('rh-gal', { "blured": items[it].blur, "parallax": items[it].parallax })}>
-            <div className='item' style={{ background: `url(${items[it].img})`, width: '100vw', height: '100vh' }} />
+        <div className={classNames('rh-gal', { "blured": items[it].blur || false, "parallax": items[it].parallax || false })} style={{
+             width: width, 
+             height: height
+        }}>
+            <div className='item' 
+                style={{
+                     background: `url(${items[it].img})`, 
+                    width: '100%',
+                    height: '100%',
+                }}
+             />
             <div className="rh-children">
                 {items[it].children && items[it].children}
             </div>
@@ -69,10 +78,14 @@ export const Gallery = ({items}) => {
     </>);
 }
 
-Gallery.defaultTypes = {
+Gallery.defaultProps = {
     items: [],
+    width: '100vw',
+    height: '100vh'
 }
 
 Gallery.propTypes = {
-    items: PropTypes.arrayOf(Object).isRequired
+    items: PropTypes.arrayOf(Object).isRequired,
+    width: PropTypes.string,
+    height: PropTypes.stir
 }
