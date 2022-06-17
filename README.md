@@ -1,4 +1,8 @@
 # @herii/react-gallery
+
+![preview](https://i.imgur.com/LFJeaaR.png)
+
+
 ## A Component to add a Gallery to your React Projet.
 
 
