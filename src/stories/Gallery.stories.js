@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Gallery } from '../components/Gallery'
 import './index.css'
-
+import video from './video.mp4'
 
 const stories = storiesOf('Gallery', module);
 
@@ -11,22 +11,28 @@ stories.add('Gallery Component', () => {
         <p>
             Gallery Component:
         </p>
-        <Gallery width="100vw" height="100vh" items={[{
-            img: "https://cdn.pixabay.com/photo/2022/05/31/17/14/bird-7233900_1280.jpg",
-            blur: true,
-            children: <div className='flex-center'>
-                <div>
-                    <h1>Birds are cool</h1>
-                    <p style={{ color: 'white' }}>So as this gallery component is</p>
-                </div>
-            </div>,
-            parallax: true,
-        },
-        {
-            img: "https://cdn.pixabay.com/photo/2016/11/23/18/27/hummingbird-1854225_1280.jpg",
-            parallax: true,
-        }]
-        } />
+        <Gallery width="100vw" height="100vh" items={[
+            {
+                img: video
+            },
+            {
+                img: "https://cdn.pixabay.com/photo/2022/05/31/17/14/bird-7233900_1280.jpg",
+                blur: true,
+                children: <div className='flex-center'>
+                    <div>
+                        <h1>Birds are cool</h1>
+                        <p style={{ color: 'white' }}>So as this gallery component is</p>
+                    </div>
+                </div>,
+                parallax: true,
+            },
+            {
+                img: "https://cdn.pixabay.com/photo/2016/11/23/18/27/hummingbird-1854225_1280.jpg",
+                parallax: true,
+            }
+        ]
+        } type="default" />
+
         <div>
             The standard Lorem Ipsum passage, used since the 1500s
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
@@ -42,8 +48,6 @@ stories.add('Gallery Component', () => {
 
             1914 translation by H. Rackham
             "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains."
-
-
         </div>
     </>)
     // return (<Gallery items=[ "https://cdn.pixabay.com/photo/2022/05/25/10/55/sulfur-7220327_1280.jpg"]/>)
