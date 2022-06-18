@@ -53,11 +53,20 @@ Now you are ready to use our component inside your app:
                     img: "https://cdn.pixabay.com/photo/2016/11/23/18/27/hummingbird-1854225_1280.jpg",
                     parallax: true,
                 }]
-            }/>
+            } type="default" />
 
 ## Properties
 
 The Component's properties are listed below.
+
+### type (string)
+
+The type of transition effect that the gallery will run when moving from an image to another.
+
+|value | description|
+|---|---|
+|default| The default transition moves the gallery from left to right /right to left|
+|fade-blur| fade in / fade out with a blurry effect|
 
 ### width
 
@@ -74,6 +83,30 @@ The height of the container of the images (The images use 100% of the height of 
 |type | default|
 |---|---|
 |string|'100vh'|
+
+### disableControls
+
+Don't like the arrows? You can hide them by setting this option to true.
+
+|type | default|
+|---|---|
+|boolean|false|
+
+### loop
+
+If you set this option to true then the gallery will move its items automatically.
+
+|type | default|
+|---|---|
+|boolean|false|
+
+### interval
+
+The interval at which the gallery will move its items (In milliseconds)
+
+|type | default|
+|---|---|
+|int|5000|
 
 ### Items
 

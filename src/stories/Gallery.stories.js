@@ -3,20 +3,30 @@ import { storiesOf } from '@storybook/react';
 import { Gallery } from '../components/Gallery'
 import './index.css'
 import video from './video.mp4'
+import im1 from './im1.jpg'
+import im2 from './im2.jpg'
+import im3 from './im3.jpg'
+
+
 
 const stories = storiesOf('Gallery', module);
 
 stories.add('Gallery Component', () => {
+
+
     return (<>
         <p>
             Gallery Component:
         </p>
         <Gallery width="100vw" height="100vh" items={[
             {
-                img: video
+                img: video,
             },
             {
-                img: "https://cdn.pixabay.com/photo/2022/05/31/17/14/bird-7233900_1280.jpg",
+                img: im1,
+            },
+            {
+                img: im2,
                 blur: true,
                 children: <div className='flex-center'>
                     <div>
@@ -27,11 +37,11 @@ stories.add('Gallery Component', () => {
                 parallax: true,
             },
             {
-                img: "https://cdn.pixabay.com/photo/2016/11/23/18/27/hummingbird-1854225_1280.jpg",
+                img: im3,
                 parallax: true,
-            }
+            },
         ]
-        } type="default" />
+        } type="fade-blur" disableControls={false} loop={true} />
 
         <div>
             The standard Lorem Ipsum passage, used since the 1500s
